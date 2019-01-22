@@ -3,9 +3,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'test'
+        echo 'starting build'
         sh 'mvn clean install -Dlicense.skip=true'
       }
     }
+  }
+  tools {
+    maven 'maven'
   }
 }
